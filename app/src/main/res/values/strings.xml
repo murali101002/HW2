@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Expense App</string>
+    <string name="addExpense">Add Expense</string>
+    <string name="editExpense">Edit Expense</string>
+    <string name="dltExpense">Delete Expense</string>
+    <string name="showExpense">Show Expense</string>
+    <string name="finishExpense">Finish</string>
+    <string name="addExpense_title">Add An Expense</string>
+    <string name="lbl_expenseName">Expense Name</string>
+    <string name="lbl_categoryName">Category</string>
+    <string name="lbl_amount">Amount</string>
+    <string name="lbl_date">Date</string>
+    <string name="data_format">mm/dd/yyyy</string>
+    <string name="receipt_lbl">Receipt</string>
+    <string name="defaultAmount">0.00</string>
+    <string name="showExpenseTitle">Expense Details</string>
+    <string name="nameLbl_show">Name</string>
+    <string name="categoryLbl_show">Category</string>
+    <string name="amountLbl_show">Amount</string>
+    <string name="dateLbl_show">Date</string>
+    <string name="finish_lbl">Finish</string>
+    <string name="btn_selectExp">Select Expense</string>
+    <string name="saveExp">SAVE</string>
+    <string name="cancelExp">CANCEL</string>
+    <string name="delete">Delete</string>
+    <string name="addExpenseActionBar">ADD EXPENSE</string>
+    <string name="showExpenseActionBar">SHOW EXPENSE</string>
+    <string name="editExpenseActionBar">EDIT EXPENSE</string>
+    <string name="deleteExpenseActionBar">DELETE EXPENSE</string>
+    <string-array name="categories">
+        <item>Select Category</item>
+        <item>Groceries</item>
+        <item>Invoice</item>
+        <item>Transportation</item>
+        <item>Shopping</item>
+        <item>Rent</item>
+        <item>Tips</item>
+        <item>Utilities</item>
+        <item>Others</item>
+    </string-array>
+</resources>

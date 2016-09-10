@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="android.com.hw2.AddExpense">
+    <TextView
+        android:layout_width="match_parent"
+        android:text="@string/addExpense_title"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/fontSize"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="@dimen/fontSizeSmall"
+        android:layout_marginTop="10dp"
+        android:text="@string/lbl_expenseName"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/newExpense_add"
+        android:maxLength="50"
+        android:inputType="text"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/fontSizeSmall"
+        android:text="@string/lbl_categoryName"
+        android:layout_height="wrap_content" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:id="@+id/category_items"
+        android:spinnerMode="dropdown"
+
+        android:entries="@array/categories"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="@dimen/fontSizeSmall"
+        android:layout_marginTop="10dp"
+        android:text="@string/lbl_amount"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/amount_add"
+        android:hint="@string/defaultAmount"
+        android:inputType="numberDecimal"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="@dimen/fontSizeSmall"
+        android:layout_marginTop="10dp"
+        android:text="@string/lbl_date"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/date_add"
+        android:focusable="false"
+        android:hint="@string/data_format"
+        android:textSize="@dimen/fontSizeSmall"
+        android:inputType="numberDecimal"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="@string/receipt_lbl"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/fontSizeSmall"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="60dp"
+        android:id="@+id/bill_add"
+        android:src="@drawable/image_finder_icon"
+        android:layout_marginTop="5dp"
+        android:layout_height="60dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btn_addExpense_add"
+        android:text="@string/addExpense"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

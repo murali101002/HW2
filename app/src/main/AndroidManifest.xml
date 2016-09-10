@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.com.hw2">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddExpense" android:label="@string/addExpenseActionBar" />
+        <activity android:name=".ShowExpense" android:label="@string/showExpenseActionBar" />
+        <activity android:name=".EditActivity" android:label="@string/editExpenseActionBar" />
+        <activity android:name=".DeleteExpense" android:label="@string/deleteExpenseActionBar"></activity>
+    </application>
+
+</manifest>
