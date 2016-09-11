@@ -2,6 +2,8 @@ package android.com.hw2;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -103,11 +105,18 @@ public class ShowExpense extends AppCompatActivity implements View.OnClickListen
         showExpenseAmount.setText(expenseObject.getExpenseAmount());
         showExpenseCategory.setText(expenseObject.getExpenseCategory());
         showExpenseDate.setText(expenseObject.getExpenseDate());
-        try {
-           bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.parse(expenseObject.getExpenseImageUri()));
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(!expenseObject.getExpenseImageUri().equals("")) {
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.parse(expenseObject.getExpenseImageUri()));
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            Drawable myDrawable = getResources().getDrawable(R.drawable.no_image);
+            bitmap      = ((BitmapDrawable) myDrawable).getBitmap();
         }
         receipt.setImageBitmap(bitmap);
+
     }
 }

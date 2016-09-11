@@ -5,6 +5,8 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -154,10 +156,16 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                 items.setSelection(((ArrayAdapter<String>) items.getAdapter()).getPosition(category));
             }
         }
-        try {
-            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.parse(expense.expenseImageUri));
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(!expense.getExpenseImageUri().equals("")) {
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.parse(expense.getExpenseImageUri()));
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            Drawable myDrawable = getResources().getDrawable(R.drawable.no_image);
+            bitmap      = ((BitmapDrawable) myDrawable).getBitmap();
         }
         receipt.setImageBitmap(bitmap);
         objectPosition = expenseList.indexOf(expense);

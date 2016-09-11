@@ -1,8 +1,11 @@
 package android.com.hw2;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -17,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
 
@@ -29,6 +33,7 @@ public class AddExpense extends AppCompatActivity implements View.OnClickListene
     Calendar myCalendar;
     boolean isItemSelected = false, isDateSelected = false;
     String name, item, date, uri, amount;
+    Bitmap bitmap = null;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -36,21 +41,27 @@ public class AddExpense extends AppCompatActivity implements View.OnClickListene
         if(requestCode == PICK_IMAGE && resultCode == RESULT_OK){
             Uri imageUri = data.getData();
             uri = String.valueOf(imageUri);
-            Bitmap bitmap = null;
+
             try {
+
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),imageUri);
             } catch (IOException e) {
                 e.printStackTrace();
+
             }
             receipt.setImageBitmap(bitmap);
         }
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expense);
-        uri = String.valueOf(Uri.parse("android.resource://android.com.hw2/drawable/no_image.png"));
+//        uri = String.valueOf(Uri.parse("android.resource://android.com.hw2/drawable/no_image.png"));
+
+        uri = "";
         myCalendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener datePicker= new DatePickerDialog.OnDateSetListener(){
 
