@@ -68,7 +68,8 @@ public class ShowExpense extends AppCompatActivity implements View.OnClickListen
                 finish();
                 break;
             case R.id.firstImage_show:
-                displayExpenseDetails(expenses.get(0));
+                currentObject = 0;
+                displayExpenseDetails(expenses.get(currentObject));
                 break;
             case R.id.previousImage_show:
                 if(currentObject>0){
@@ -91,7 +92,8 @@ public class ShowExpense extends AppCompatActivity implements View.OnClickListen
                }
                 break;
             case R.id.lastImage_show:
-                displayExpenseDetails(expenses.get(expenses.size() - 1));
+                currentObject = expenses.size() - 1;
+                displayExpenseDetails(expenses.get(currentObject));
                 break;
         }
     }
