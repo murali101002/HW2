@@ -25,6 +25,7 @@ public class ShowExpense extends AppCompatActivity implements View.OnClickListen
     Expense expenseObject, current, prev;
     Bitmap bitmap;
     ListIterator<Expense> listIterator;
+    public static int currentObject=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,16 +71,20 @@ public class ShowExpense extends AppCompatActivity implements View.OnClickListen
                 displayExpenseDetails(expenses.get(0));
                 break;
             case R.id.previousImage_show:
-                if(listIterator.hasPrevious()){
-                    expenseObject = listIterator.previous();
+                if(currentObject>0){
+//                    expenseObject = listIterator.previous();
+                    currentObject--;
+                    expenseObject = expenses.get(currentObject);
                     displayExpenseDetails(expenseObject);
                 }else {
                     Toast.makeText(getApplicationContext(), "No prevoius expenses found", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.nextImage_show:
-               if (listIterator.hasNext()) {
-                    expenseObject = listIterator.next();
+               if (currentObject < expenses.size()-1) {
+                   currentObject++;
+//                    expenseObject = listIterator.next();
+                   expenseObject = expenses.get(currentObject);
                     displayExpenseDetails(expenseObject);
                 }else {
                    Toast.makeText(getApplicationContext(), "No more expenses found", Toast.LENGTH_SHORT).show();
